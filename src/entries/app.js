@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {render} from 'react-dom';
 //import PlayList from "./src/playlist/components/playlist";
 //import Media from "./src/playlist/components/media";
@@ -15,6 +15,8 @@ import { Map as map } from 'immutable';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom';
+import Header from '../pages/components/header'
 
 
 //import data from '../schemas/index'
@@ -75,6 +77,12 @@ const app = document.getElementById('home-container')
 //render(<PlayList type="video" title="Que es responsive Design?" author="Miguel Triana" image="./images/covers/responsive.jpg"/>,app);
 
 render(
-<Provider store={store}>
-   <Home />
-</Provider>, app)
+    <BrowserRouter>
+        <Provider store={store}>
+            <Fragment>
+               <Header/>
+               <Home />
+            </Fragment>
+        </Provider>
+    </BrowserRouter>
+    , app)
