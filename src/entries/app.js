@@ -3,7 +3,8 @@ import {render} from 'react-dom';
 //import PlayList from "./src/playlist/components/playlist";
 //import Media from "./src/playlist/components/media";
 //import data from '../../src/api.json'
-import Home from "../pages/containers/home";
+import Videos from "../pages/containers/videos";
+import Home from "../pages/components/home";
 
 import { Provider } from 'react-redux';
 
@@ -15,7 +16,7 @@ import { Map as map } from 'immutable';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Header from '../pages/components/header'
 
 
@@ -81,7 +82,8 @@ render(
         <Provider store={store}>
             <Fragment>
                <Header/>
-               <Home />
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/videos" component={Videos}/>
             </Fragment>
         </Provider>
     </BrowserRouter>

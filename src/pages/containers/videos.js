@@ -15,7 +15,7 @@ import * as actions  from "../../actions/index";
 
 import { bindActionCreators } from 'redux'
 
-class Home extends Component {
+class Videos extends Component {
    /* state = {
         modalVisible: false,
     }*/
@@ -94,4 +94,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Videos);
