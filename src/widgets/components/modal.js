@@ -21,7 +21,6 @@ function Modal(props) {
             </Link>
         </div>
     )
-
 }
 
 export default Modal;
