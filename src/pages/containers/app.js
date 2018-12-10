@@ -11,6 +11,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../components/header'
 import NotFound from "../components/not-found";
+import Video from './video'
 
 
 const store = createStore(
@@ -34,7 +35,9 @@ class App extends Component{
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route exact path="/videos" component={Videos}/>
+                            <Route exact path="/videos/:id" component={Video}/>
                             <Redirect from="/v" to="/videos" />
+                            <Redirect from="/v/:id" to="/video/:id" />
                             <Route component={NotFound} />
                         </Switch>
                     </Fragment>

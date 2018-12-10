@@ -1,5 +1,6 @@
 import React,{ PureComponent } from 'react';
 import './generic-page.css'
+import { withRouter } from 'react-router'
 
 class NotFound extends PureComponent {
     handleForwardClick = () => {
@@ -44,4 +45,4 @@ class NotFound extends PureComponent {
      }
 }
 
-export default NotFound;
+export default withRouter(NotFound);
